@@ -4,7 +4,7 @@ FROM nginx:1.25.3-alpine
 
 #Port to expose
 EXPOSE 80
-ENV MyName="YourNameHere"
+ENV MyName="Jaime"
 WORKDIR /app
 #working path for application inside container
 
