@@ -18,13 +18,13 @@ jobs:
         docker build -t cool_docker .
         docker tag cool_docker jaimea10/nice_docker:latest
         docker push jaimea10/nice_docker:latest
-    - name: Create kubeconfig
-      run: |
-        mkdir ${HOME}/.kube
-        echo ${{secrets.KUBE_CONFIG}} | base64 --decode > ${HOME}/.kube/config
-    - name: Use context
-      run: |
-        kubectl version
-        kubectl config view
-    - name: Tell k8s to restart the cluster
-      run:  kubectl rollout restart deployment cst407-deployment
+    # - name: Create kubeconfig
+    #   run: |
+    #     mkdir ${HOME}/.kube
+    #     echo ${{secrets.KUBE_CONFIG}} | base64 --decode > ${HOME}/.kube/config
+    # - name: Use context
+    #   run: |
+    #     kubectl version
+    #     kubectl config view
+    # - name: Tell k8s to restart the cluster
+    #   run:  kubectl rollout restart deployment cst407-deployment
